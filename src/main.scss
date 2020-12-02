@@ -1,0 +1,254 @@
+$myFont:'Montserrat',
+sans-serif;
+@import "~magnific-popup/src/css/main.scss";
+@import "~normalize-css/normalize.css";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+@import "colors";
+
+
+
+
+
+footer, main, .rv-header{
+    transition: opacity 1s;
+}
+
+
+body, .rv-main {
+    font-family: $myFont;
+    padding: 2rem 1rem;
+    line-height: 1.4;
+    font-size: 14px;
+}
+
+.hidden-body footer, .hidden-body main{
+    display: none;
+}
+.hidden-body .rv-header{
+    visibility: hidden;
+    opacity: 0;
+}
+.loaded_hiding footer, .loaded_hiding main, .loaded_hiding .rv-header{
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+}
+
+
+
+.loaded footer, .loaded main, .loaded .rv-header{
+    visibility: visible;
+    opacity: 1;
+}
+
+body, .rv-main {
+    display: grid;
+    place-items: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    line-height: 1.1;
+}
+
+a, a:visited, a:hover{
+    color: inherit;
+}
+
+p {
+    font-weight: 400;
+    line-height: 140%;
+}
+
+.visually-hidden {
+    display: block;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(1px);
+    white-space: nowrap;
+    position: absolute;
+}
+
+body {
+    background: var(--backColor);
+    color: var(--textColor);
+    transition: background 500ms ease-in-out, color 200ms ease;
+}
+
+.no-js .user-toggle {
+    display: none;
+}
+
+.user-toggle {
+    margin: 2rem auto 0 auto;
+    padding-top: 2.5rem;
+    max-width: 20rem;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+}
+
+
+.toggle-button:focus {
+    outline: 1px solid var(--button-background);
+    outline-offset: 0.5rem;
+}
+
+
+
+
+.light-gray-btn {
+    background-color: var(--softgrayBtnColor);
+    color: var(--grayBtnTextColor);
+    opacity: 0.6;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    & svg {
+        path {
+            fill: var(--grayBtnTextColor);
+        }
+
+        height: 1.5em;
+        width: 1.5em;
+        margin: 0 0 0 .6em;
+    }
+
+    display: inline-flex;
+
+    span {
+        display: inline-flex;
+    }
+
+    border: none;
+    border-radius: 10px;
+    font: inherit;
+    font-size: 0.8em;
+    padding: 0.5em 1em;
+    transition: background 500ms ease-in-out,
+    color 200ms ease;
+
+}
+
+.theme-toggle {
+    & svg {
+        path {
+            fill: var(--themeIconColor);
+        }
+    }
+}
+
+.logo-full{
+    width: 10%;
+}
+
+.logo-ball{
+    width: 20%;
+
+    animation: rotatingAnimation 4s linear infinite ;
+}
+@keyframes rotatingAnimation{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+.rv-main {
+    max-width: 1440px;
+    padding: 2em;
+}
+.rv-h1{
+    font-size: 3.5em;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.rv-h2{
+    font-size: 3em;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.color-social-icons{
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    a{
+        border-radius: 15px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    width: 5rem;
+    height: 5rem;
+    text-decoration: none;
+    color: #fff;
+    &:hover{
+        transform: scale(1.05)
+    }
+    }
+    .vk{
+        background-color: $vkColor;
+    }
+    .fb{
+        background-color: $fbColor;
+    }
+    .yt{
+        background-color: $ytColor;
+        svg{
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    }
+    .wa{
+        background-color: $waColor;
+        svg{
+            width: 3.8rem;
+            height: 3.8rem;
+        }
+    }
+}
+
+
+.rv-card{
+    border-radius: 15px;
+    border: 2px solid var(--borderColor);
+
+    display: grid;
+    place-items: center;
+}
+
+.big-rv-card{
+    margin: 10px;
+    padding: 3em;
+    p{
+        max-width: 80%;
+        margin-bottom: 3.8em;
+    }
+}
+
+
+a.big-button{
+    background-color: $myOrange;
+    color: $myBtnOrangeText;
+    
+    &:hover{
+        background-color: $myBtnGreen;
+    color: $myBtnGreenText;
+    }
+    transition: all .4s;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 2em;
+    padding: .5em;
+    width: 50%;
+    text-align: center;
+
+    border-radius: 10px;
+}

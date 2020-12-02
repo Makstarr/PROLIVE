@@ -1,0 +1,82 @@
+
+$vkColor: #2787F5;
+$fbColor: #3B5998;
+$waColor: #25D366;
+$ytColor: #FC0D1B;
+
+$myGreen: #33FF33;
+$myOrange: #ff9100;
+$myBlue: #3333FF;
+$myYellow: #FFFF33;
+$myBtnOrangeText: #fff;
+$myBtnGreen: #8CF225;
+$myBtnGreenText: #181818;
+
+:root {
+    --color-mode: 'light';
+    --backColorDark: #181818;
+    --backColorLight: #FFFFFF;
+
+    --headerColorDark: #151515;
+    --headerColorLight: #FFFFFF;
+
+    --grayBtnColorDark: #000;
+    --grayBtnColorLight: #F6f6f6;
+
+    --softgrayBtnColorDark: #313131;
+    --softgrayBtnColorLight: #F6F6F6;
+
+    --grayBtnTextColorDark: #ffffff;
+    --grayBtnTextColorLight: #000000;
+
+    --memuColorDark: #151515;
+    --menuColorLight: #F1F1F1;
+
+    --textColorDark: #FFFFFF;
+    --textColorLight: #141414;
+
+    --borderColorDark: #787878;
+    --borderColorLight: #787878;
+
+    --themeIconColor: rgb(34, 34, 34);
+
+    --backColor: var(--backColorLight);
+    --headerColor: var(--headerColorLight);
+    --grayBtnColor: var(--grayBtnColorLight);
+    --softgrayBtnColor: var(--softgrayBtnColorLight);
+    --grayBtnTextColor: var(--grayBtnTextColorLight);
+    --memuColor: var(--memuColorLight);
+    --textColor: var(--textColorLight);
+    --borderColor: var(--borderColorLight);
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+      --color-mode: 'dark';
+
+      &:not([data-user-color-scheme]) {
+        --themeIconColor: #FFFF33;
+          --backColor: var(--backColorDark);
+          --headerColor: var(--headerColorDark);
+          --grayBtnColor: var(--grayBtnColorDark);
+          --softgrayBtnColor: var(--softgrayBtnColorDark);
+          --grayBtnTextColor: var(--grayBtnTextColorDark);
+          --memuColor: var(--memuColorDark);
+          --textColor: var(--textColorDark);
+          --borderColor: var(--borderColorDark);
+      }
+  }
+}
+
+[data-user-color-scheme='dark'] {
+  --themeIconColor: #FFFF33;
+  --backColor: var(--backColorDark);
+  --headerColor: var(--headerColorDark);
+  --grayBtnColor: var(--grayBtnColorDark);
+  --softgrayBtnColor: var(--softgrayBtnColorDark);
+  --grayBtnTextColor: var(--grayBtnTextColorDark);
+  --memuColor: var(--memuColorDark);
+  --textColor: var(--textColorDark);
+  --borderColor: var(--borderColorDark);
+}
