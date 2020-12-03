@@ -6,7 +6,16 @@ sans-serif;
 @import "colors";
 
 
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
 
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
 
 
 footer, main, .rv-header{
@@ -51,9 +60,6 @@ h1 {
     line-height: 1.1;
 }
 
-a, a:visited, a:hover{
-    color: inherit;
-}
 
 p {
     font-weight: 400;
@@ -82,30 +88,21 @@ body {
     display: none;
 }
 
-.user-toggle {
-    margin: 2rem auto 0 auto;
-    padding-top: 2.5rem;
-    max-width: 20rem;
-    border-top: 1px solid var(--border-color);
-    text-align: center;
-}
-
-
-.toggle-button:focus {
-    outline: 1px solid var(--button-background);
-    outline-offset: 0.5rem;
-}
 
 
 
-
-.light-gray-btn {
-    background-color: var(--softgrayBtnColor);
+.dark-gray-btn {
+    background-color: var(--grayBtnColor);
     color: var(--grayBtnTextColor);
     opacity: 0.6;
-
+    text-decoration: none;
     &:hover {
+        color: var(--grayBtnTextColor)!important;
         opacity: 1;
+    }
+    &:focus {
+        outline: none;
+        outline-offset: none;
     }
 
     & svg {
@@ -129,12 +126,63 @@ body {
     font: inherit;
     font-size: 0.8em;
     padding: 0.5em 1em;
+    transition: background 200ms ease-in-out,
+    color 200ms ease;
+}
+.search-form, .subscribe-form{
+    input[type="text"], input[type="mail"]{
+        opacity: 0.6;
+    }
+}
+
+.light-gray-btn {
+    background-color: var(--softgrayBtnColor);
+    color: var(--grayBtnTextColor);
+    text-decoration: none;
+    span, &::after,  &::before{
+        opacity: 0.6;
+    }
+    &:hover {
+        color: var(--grayBtnTextColor)!important;
+        span,  &::after, &::before{
+        opacity: 1;
+        }
+    }
+    &:focus {
+        outline: none;
+        outline-offset: none;
+    }
+
+    & svg {
+        path {
+            fill: var(--grayBtnTextColor);
+        }
+
+        height: 1.5em;
+        width: 1.5em;
+        margin: 0 0 0 .6em;
+    }
+
+    display: inline-flex;
+    align-items: center;
+
+    span {
+        display: inline-flex;
+    }
+
+    border: none;
+    border-radius: 10px;
+    font: inherit;
+    font-size: 0.8em;
+    padding: 0.5em 1em;
     transition: background 500ms ease-in-out,
     color 200ms ease;
 
 }
 
 .theme-toggle {
+    display: flex;
+    align-items: center;
     & svg {
         path {
             fill: var(--themeIconColor);
@@ -143,23 +191,12 @@ body {
 }
 
 .logo-full{
-    width: 10%;
+    width: 12%;
 }
 
-.logo-ball{
-    width: 20%;
 
-    animation: rotatingAnimation 4s linear infinite ;
-}
-@keyframes rotatingAnimation{
-    from{
-        transform: rotate(0deg);
-    }
-    to{
-        transform: rotate(360deg);
-    }
-}
 .rv-main {
+    margin-top: 100px;
     max-width: 1440px;
     padding: 2em;
 }
@@ -176,17 +213,18 @@ body {
 }
 
 .color-social-icons{
-    font-size: 2.5rem;
+    font-size: 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     a{
+        transition: all .2s;
         border-radius: 15px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
-    width: 5rem;
-    height: 5rem;
+    width: 4rem;
+    height: 4rem;
     text-decoration: none;
     color: #fff;
     &:hover{
@@ -219,18 +257,30 @@ body {
 .rv-card{
     border-radius: 15px;
     border: 2px solid var(--borderColor);
-
+    box-shadow: var(--shadow);
     display: grid;
     place-items: center;
 }
 
 .big-rv-card{
-    margin: 10px;
-    padding: 3em;
+    margin: 2rem;
+    padding: 1em 3em;
+    h2{
+        width: 80%;
+    }
     p{
         max-width: 80%;
         margin-bottom: 3.8em;
+        font-size: 1.2em;
     }
+}
+.btn-rv-card{
+    display: block;
+    text-align: center;
+    padding: 1em;
+    font-size: 50px;
+    text-decoration: none;
+    color: inherit;
 }
 
 
@@ -251,4 +301,556 @@ a.big-button{
     text-align: center;
 
     border-radius: 10px;
+}
+
+.hello-screen{
+    margin-top: 100px;
+    margin-bottom: -80px;
+    width: 100%;
+    max-width: 1100px;
+}
+
+.big-logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &__ball{
+        width: 35%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: rotatingAnimation 4s linear infinite ;
+        img{
+            width: 95%;
+        }
+    }
+    &__words{
+        width: 65%;
+        padding: 1em;
+        span, p, h1{
+            display: block;
+        }
+        h1{
+            font-size: 3.7em;
+        line-height: 1;
+            font-weight: 500;
+            margin: .4em 0;
+        }
+        p{
+            font-size: 1.2em;
+            line-height: 1;
+
+        }
+        span{
+            color: $myBlue;
+            font-weight: 500;
+            &:last-child{
+                color: $myGreen;
+                animation: logoColorsAnimation 10s linear infinite;
+            }
+        }
+    }
+}
+
+@keyframes rotatingAnimation{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+@keyframes logoColorsAnimation{
+    0%{
+        color:$myGreen;
+    }
+    25%{
+        color:$myYellow;
+    }
+    50%{
+        color:$myOrange;
+    }
+    75%{
+        color:$myYellow;
+    }
+    100%{
+        color:$myGreen;
+    }
+}
+
+
+.physical-adress, .description-with-header{
+    text-transform: none;
+    text-decoration: none;
+    font-style: normal;
+    opacity: .7;
+    span{
+        display: block;
+        font-weight: 500;
+        font-size: 1em;
+    }
+    span:last-child{
+        font-weight: 300;
+        font-size: .8em;
+
+    }
+}
+
+
+.rv-header{
+    transition: background 300ms ease-in-out, color 200ms ease;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    &__buttons > *{
+        margin: 3px;
+    }
+    .yt:hover{
+        background-color: $ytColor;
+    }
+    .vk:hover{
+        background-color: $vkColor;
+    }
+    .fb:hover{
+        background-color: $fbColor;
+    }
+    .wa:hover{
+        background-color: $waColor;
+    }
+    .vk, .fb, .yt, .wa{
+        &:hover{
+            transition: all .3s;
+            color: #fff!important;
+            svg path{
+                fill: #fff;
+            }
+        }
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        line-height: 1;
+        font-size: 1em;
+        padding: 0;
+        width: 1.74rem;
+        height: 1.74rem;
+    }
+    .wa svg{
+        height: 1.2em;
+        width: 1.2em;
+        margin: 0;
+    }
+    .yt svg{
+        height: .7em;
+        width: .7em;
+        margin: 0;
+        margin-left: 2px;
+    }
+    &__top-line, &__bottom-line, &__buttons{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__top-line, &__bottom-line{
+        padding-bottom: 5px;
+    }
+    &__logo img{
+        width: 120px;
+    }
+
+    background-color: var(--headerColor);
+    box-shadow:  var(--shadow);
+
+    width: 100%;
+
+    &__container{
+        max-width: 1700px;
+        width: 100%;
+        margin: auto;
+        padding: 5px 10px;
+    }
+    &__adress{
+        font-size: 12px;
+        padding: 5px;
+    }
+    &__menu{
+        font-size: 1.2em;
+        display: flex;
+        align-items: center;
+        ul{
+            list-style: none;
+            display: flex;
+
+            margin: 0;
+            padding: 0;
+
+            li{
+                margin: 0;
+                padding: 0;
+            }
+        }
+        a{
+            display: block;
+            text-decoration: none;
+            color: var(--menuColor);
+            opacity: .6;
+            transition: all .3s;
+            padding: 5px 10px;
+            &:hover{
+                opacity: 1;
+            }
+        }
+    }
+}
+.help-button{
+white-space: nowrap;
+    &-container{
+        position: relative;  
+        opacity: 1!important;
+    }
+    padding: 8px 10px;
+    //background-color:$myOrange;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 10px;
+    animation: buttonColorsAnimation 8s linear infinite;
+    opacity: 1;
+    &:hover{
+        animation: none;
+        background-color: $myRed;
+    }
+}
+.help-button-container:hover{
+    transform: rotate(5deg);
+    transition: all 1.5s;
+    .hearts{
+        transform: rotate(30deg);
+        font-size: 1.3em;
+            transition: all 1s;
+            animation: heartColorsAnimation 8s ease-out infinite;
+           
+
+        &.hrt1{
+            
+            transform: translate(-0px, 40px) rotate(30deg);
+        }
+        &.hrt2{
+            transform: translate(-10px, 60px) rotate(10deg);
+        }
+        &.hrt3{
+            transform: translate(-120px, 59px) rotate(-10deg);
+        }
+        &.hrt4{
+            transform: translate(-90px, 61px) rotate(-30deg);
+        }
+        &.hrt5{
+            transform: translate(-65px, 70px) rotate(20deg);
+        }
+        &.hrt6{
+           transform: translate(-30px, 60px) rotate(-20deg);
+        }
+        &.hrt7{
+            transform: translate(-105px, 45px) rotate(5deg);
+        }
+        &.hrt8{
+            opacity: 1;
+            font-size: .8em;
+            transform: translate(-20px, 30px) rotate(-5deg);
+        }
+    }
+}
+.hearts{
+    &.hrt8{
+        opacity: 0;
+        font-size: .1em;
+    }
+    transition: all 1s;
+    display: block;
+    z-index: -1;
+    right: 10%;
+    bottom: 20%;
+    position: absolute;
+    animation: heartColorsAnimation 8s linear infinite;
+}
+
+button.menu-btn{
+    display: flex;
+    height: 2.4em;
+    align-items: center;
+    flex-direction: column;
+    justify-content:center;
+    &::after,&::before{
+        display: block;
+        content: "";
+        height: 1px;
+        width: 1.7em;
+        margin: 0;
+        padding: 0;
+        border-radius: 10px;
+        background-color: var( --grayBtnTextColor);
+    }
+    span{
+        display: block;
+        height: 1px;
+        width: 1.7em;
+        margin: 3px;
+        padding: 0;
+        border-radius: 10px;
+        background-color: var( --grayBtnTextColor);
+     
+    }
+}
+
+
+.search-form, .subscribe-form {
+    padding: 0;
+    background-color: rgba(0, 0, 0,0);
+    form{
+        display: flex;
+        align-items: center;
+    }
+    input{
+        background-color: var( --inputColor);
+        border-radius: 10px;
+        transition: all .2s;
+        border: 1px solid var(--inputColor);
+        padding: 0.55em 1em;
+        color: var(--grayBtnTextColor);
+        &:focus{
+            outline: none;
+            border: 1px solid var(--grayBtnTextColor);
+        }
+    }
+    button{
+        z-index: 2;
+        opacity: 1;
+        margin-left: -2em;
+        padding: .8em 1.5em;
+    }
+}
+@keyframes floatingAround{
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(30deg);
+    }
+    75%{
+        transform: rotate(-30deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+@keyframes heartColorsAnimation{
+    0%{
+        
+        color:$myRed;
+    }
+    25%{
+
+        color: 	$myPink;
+    }
+    50%{
+
+        color:$myRed;
+    }
+    75%{
+
+        color:$myPink2;
+    }
+    100%{
+        color:$myRed;
+    }
+}
+
+@keyframes buttonColorsAnimation{
+    0%{
+
+        background-color:$myRed;
+    }
+    25%{
+
+        background-color: 	$myPink2;
+    }
+    50%{
+
+        background-color:$myRed;
+    }
+    75%{
+
+        background-color:	$myPink;
+    }
+    100%{
+        background-color:$myRed;
+    }
+}
+
+
+.rv-footer{
+    margin-top: 40px;
+    border-top: 1px solid var(--footerborderColor);
+    padding-top: 40px;
+    font-size: 22px;
+    width: 100%;
+    form{
+        font-size: 1.3rem;
+        input{
+            font-size: 1rem;
+            height: 3rem;
+        }
+    }
+    &__container{
+        display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+        max-width: 1700px;
+        width: 100%;
+        margin: auto;
+        padding: 5px 10px;
+    }
+    &__column{
+        padding-top: 10px;
+        display: flex;
+    flex-direction: column;
+    position: relative;
+    //justify-content: space-between;
+        width:28%;
+    }
+    .softer-btn{
+        background-color: var(--inputColor);
+    }
+    .light-gray-btn{
+        font-size: 1.3rem;
+        margin: 10px 0;
+        width: 100%;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+    }
+    nav{
+        position: absolute;
+        bottom: 16px;
+        text-decoration: none;
+        a{
+            font-weight: 300;
+            padding: 0 10px;
+            opacity: .5;
+            color: inherit;
+            &:hover{
+                opacity: 1;
+            }
+        }
+        
+        font-size: 12px;
+    }
+    .description-with-header{
+        text-align: center;
+        margin: 10px;
+        margin-top: 0;
+        opacity: 1;
+        color: var(--infoTextColor);
+    }
+    .subscribe-form, .search-form{
+        margin: 0;
+        width: 100%;
+        
+        form{
+            position: relative;
+            width: 100%;
+        }
+        margin: 10px 0;
+        padding: 0;
+        button{
+            height: 3em;
+            span{
+                opacity: .6;
+            }
+           
+            &:hover span{
+                opacity: 1;
+            }
+
+            width: 40%;
+            font-size: 1rem;
+            right: 0;
+            position: absolute;
+            margin: 0;
+        }
+        input[type="text"]{
+            width: 95%;
+            
+        }
+    }
+    .logos img{
+    display: block;
+     width: 130px;
+     
+     margin: auto;
+     margin-bottom: .5em ;
+    }
+    .logos, .color-social-icons{
+        margin-top: 30px;
+    }
+    .copyright{
+        margin-top: 40px;
+    }
+
+}
+.logos{
+    align-items: center;
+    justify-content: center;
+    display: grig;
+   column-count: 2;
+    row-gap: .5em;
+    column-gap: .5em;
+}
+.copyright{
+    transition: all .3s;
+    font-weight: 300;
+    font-size: 12px;
+    text-align: center;
+    & > a{
+        line-height: 150%;
+        color: inherit;
+        text-decoration: none;
+        opacity: .5;
+        &:hover{
+            opacity: 1;
+        }
+        display: block;
+    }
+}
+
+.rv-small-cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 2rem;
+    article{
+        width: 30%;
+        padding: 1.5em 30px;
+        margin: 2rem 0;
+        h2{
+            font-size: 1.8em;
+            font-weight: 500;
+        }
+        img{
+            max-height: 100px;
+            margin: 2em auto;
+        }
+        span{
+            display: block;
+            width: 100%;
+text-align: right;
+font-size: 1.8em;
+        }
+      
+    }
 }

@@ -20,8 +20,8 @@ module.exports = merge(config, {
       minimizer: [
         new TerserPlugin(),
         new HtmlWebpackPlugin({
-          filename: 'page1.html',
-          template: "./src/page1.html",
+          filename: 'about.html',
+          template: "./src/about.html",
           minify: {
             removeAttributeQuotes: true,
             collapseWhitespace: true,
@@ -29,7 +29,7 @@ module.exports = merge(config, {
           }
         }), 
         new HtmlWebpackPlugin({
-            template: "./src/page2.html",
+            template: "./src/index.html",
             minify: {
               removeAttributeQuotes: true,
               collapseWhitespace: true,

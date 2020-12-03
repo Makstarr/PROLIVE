@@ -21,11 +21,11 @@ module.exports = merge(config, {
     },
     
     plugins: [new HtmlWebpackPlugin({
-        filename: 'page1.html',
-        template: "./src/page1.html",
+        filename: 'about.html',
+        template: "./src/about.html",
       }), 
       new HtmlWebpackPlugin({
-        template: "./src/page2.html",
+        template: "./src/index.html",
       }), 
       new webpack.ProvidePlugin({
         $: 'jquery',
