@@ -23,7 +23,11 @@ module.exports = merge(config, {
     plugins: [new HtmlWebpackPlugin({
         filename: 'about.html',
         template: "./src/about.html",
-      }), 
+      }),
+      new HtmlWebpackPlugin({
+      filename: 'help.html',
+      template: "./src/help.html",
+    }), 
       new HtmlWebpackPlugin({
         template: "./src/index.html",
       }), 
