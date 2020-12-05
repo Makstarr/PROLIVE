@@ -23,7 +23,9 @@ section,
 summary {
     display: block;
 }
-
+.rv-small-cards{
+    margin: auto;
+}
 /**
  * Correct `inline-block` display not defined in IE 8/9.
  */
