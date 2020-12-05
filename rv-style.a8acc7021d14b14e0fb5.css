@@ -25,6 +25,7 @@ summary {
 }
 .rv-small-cards{
     margin: auto;
+    padding: 0;
 }
 /**
  * Correct `inline-block` display not defined in IE 8/9.
