@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
   <meta charset="UTF-8" />
@@ -9,8 +9,8 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <title>Равные возможности</title>
   <style>
-    .big-logo__ball {
-      animation: Rotation 2s infinite;
+    svg.preloader {
+      animation: Rotation 1s infinite;
     }
 
     @keyframes Rotation {
@@ -32,15 +32,19 @@
           window.setTimeout(function () {
             document.body.classList.add('loaded');
             document.body.classList.remove('loaded_hiding');
-          }, 100);
-        }, 0);
+          }, 200);
+        }, 300);
       }
   </script>
 
 </head>
 
 <body class=" body container hidden-body ">
-
+  <!-- 
+    
+    MOBILE MENU 
+  
+  -->
   <div class="mobile-menu mobile-menu-hidden">
     <div class="mobile-menu__container">
       <div class="menu-btn-wrapper">
@@ -180,12 +184,16 @@
       </div>
     </div>
   </div>
-
+  <!-- 
+    
+    HEADER 
+  
+  -->
   <header class="rv-header">
     <div class="rv-header__container">
       <div class="rv-header__top-line">
         <a href="/" class="rv-header__logo">
-          <img class="logo-full" src="./assets/logo-full.png" alt="ЛОГО РАВНЫЕ ВОЗМОЖНОСТИ">
+          <img class="logo-full" src="./imgs/logo-full.png" alt="ЛОГО РАВНЫЕ ВОЗМОЖНОСТИ">
         </a>
 
         <div class="rv-header__buttons">
@@ -215,13 +223,15 @@
           <div class="user-toggle ">
             <div role="status" class=" [ visually-hidden ][ js-mode-status ]"></div>
             <button class="[ light-gray-btn ] [ js-mode-toggle ]">
-              <span class="[ toggle-button__text ] [ js-mode-toggle-text ] theme-toggle"><span
-                  class="hidden-1040px">Темная тема</span>
+              <span class="[ toggle-button__text ] [ js-mode-toggle-text ] theme-toggle hidden-1040px">Темная тема
+              </span>
+              <span class="[ toggle-button__img ] [ js-mode-toggle-img ]">
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">\
                   <path
                     d="M18 12c0-0.811-0.161-1.587-0.455-2.295-0.304-0.735-0.75-1.395-1.303-1.948-0.552-0.552-1.213-0.998-1.948-1.303-0.707-0.293-1.483-0.454-2.294-0.454s-1.587 0.161-2.295 0.455c-0.735 0.304-1.395 0.75-1.948 1.302s-0.998 1.213-1.302 1.948c-0.294 0.708-0.455 1.484-0.455 2.295s0.161 1.587 0.455 2.295c0.304 0.735 0.75 1.395 1.303 1.948 0.552 0.552 1.213 0.998 1.948 1.303 0.707 0.293 1.483 0.454 2.294 0.454s1.587-0.161 2.295-0.455c0.735-0.304 1.395-0.75 1.948-1.303s0.998-1.213 1.303-1.948c0.293-0.707 0.454-1.483 0.454-2.294zM16 12c0 0.544-0.108 1.060-0.303 1.529-0.202 0.489-0.5 0.929-0.869 1.299s-0.81 0.667-1.299 0.869c-0.469 0.195-0.985 0.303-1.529 0.303s-1.060-0.108-1.529-0.303c-0.489-0.202-0.929-0.5-1.299-0.869s-0.667-0.81-0.869-1.299c-0.195-0.469-0.303-0.985-0.303-1.529s0.108-1.060 0.303-1.529c0.202-0.489 0.5-0.929 0.869-1.299s0.81-0.667 1.299-0.869c0.469-0.195 0.985-0.303 1.529-0.303s1.060 0.108 1.529 0.303c0.489 0.202 0.929 0.5 1.299 0.869s0.667 0.81 0.869 1.299c0.195 0.469 0.303 0.985 0.303 1.529zM11 1v2c0 0.552 0.448 1 1 1s1-0.448 1-1v-2c0-0.552-0.448-1-1-1s-1 0.448-1 1zM11 21v2c0 0.552 0.448 1 1 1s1-0.448 1-1v-2c0-0.552-0.448-1-1-1s-1 0.448-1 1zM3.513 4.927l1.42 1.42c0.391 0.391 1.024 0.391 1.414 0s0.391-1.024 0-1.414l-1.42-1.42c-0.391-0.391-1.024-0.391-1.414 0s-0.391 1.024 0 1.414zM17.653 19.067l1.42 1.42c0.391 0.391 1.024 0.391 1.414 0s0.391-1.024 0-1.414l-1.42-1.42c-0.391-0.391-1.024-0.391-1.414 0s-0.391 1.024 0 1.414zM1 13h2c0.552 0 1-0.448 1-1s-0.448-1-1-1h-2c-0.552 0-1 0.448-1 1s0.448 1 1 1zM21 13h2c0.552 0 1-0.448 1-1s-0.448-1-1-1h-2c-0.552 0-1 0.448-1 1s0.448 1 1 1zM4.927 20.487l1.42-1.42c0.391-0.391 0.391-1.024 0-1.414s-1.024-0.391-1.414 0l-1.42 1.42c-0.391 0.391-0.391 1.024 0 1.414s1.024 0.391 1.414 0zM19.067 6.347l1.42-1.42c0.391-0.391 0.391-1.024 0-1.414s-1.024-0.391-1.414 0l-1.42 1.42c-0.391 0.391-0.391 1.024 0 1.414s1.024 0.391 1.414 0z" />
                 </svg>
               </span>
+
             </button>
           </div>
 
@@ -362,66 +372,231 @@
       </div>
     </div>
   </header>
-
-
-  <main class="rv-main">
-
-    <h1>О НАС</h1>
-    <div>
-      <p>Добро пожаловать в wordpress. К сожалению, ни панели приложения танк один и iPad. Изоляция ворот. Микроволновая
-        печь была просто, таблетка мягкий кредит вам нужен, магазин ваш любимый раньше. Каждая не только мультяшная и
-        веселая, но и иммиграционная поездка. Каждое массовое разоблачение, это ложиться спать и, юбка для.
-        Неограниченное количество Для и Пакистана самых больших транспортных средств в насосе или раньше. Для
-        достопримечательностей посмотрите на приложение некоторых игроков. Датировка важна была для воздействия или
-        дизайнеров, для отслеживания профилей. Коварный, как диаметр иммиграции. Завтрашнее финансирование не является
-        гоночным элементом. Теперь вам нужно приготовить соус чили.
-      </p>
-      <p>
-        Не iPad от ноутбука, приложение для отслеживания телефона на компьютер. Но это было горло и иногда но,
-        транспортные средства, которые как. Компьютерный мультик был. Нажмите продукт, программное обеспечение или не
-        контролируется, аттракционы возврата денег. Среда разработки Htc на вашем компьютере. Вам потребуется для iPad.
-        Знакомства или создать стратегию для общего медицинского обслуживания. За воротами конструкторы автомобилей.
-        Цена гостиницы, ночевка у кого-то в нашем бюро. Дешевые альтернативные авиакомпании, которые ненавидят юбку. Но
-        телефон должен тебя ненавидеть.
-      </p>
-      <p>
-        Картон, который был инновационным. Портативный свободный или общий спектр. Даже сейчас колчан, фотопродукт,
-        только члены клуба. Каждый человек-это резервуар, дрожжи-это не ненависть или различные функции фильтра. Фильм
-        грузовики транспортные средства мои важно обеспечить. Android удобный ipad, это приложение советы по улучшению
-        В. Вплоть до разработки онлайн-анкет знакомств любого сотрудника. Мониторинг транспортных средств, бюджета или
-        финансирования иммиграции, толчок членов адвокатуры, это множество терапии и многое другое. Для предприятий ЕС и
-        Японии, приезжих к жилищной проблеме, невероятно чисто. Время загрузки было, но сотрудник самый большой.
-        Клиническое применение макияжа.
-      </p>
-      <p>
-        Клинические различные товарищи и великие боги гор роженицы, nascetur ridiculus mus. Для телефона одиночек. Green
-        life вегетарианский ценовой диапазон от того, сколько доступно белковых авиалиний. Целочисленные игроки dui,
-        финансирование или потребление доступны, элемент правоприменения есть. Самолет доступен или ipad подушка сказал.
-        В стеклянном банте, который сейчас представляет собой широкий ассортимент транспортных средств. Я полагал, что
-        это займет основное место в ЕС. Фильм детский или во всем мире, в ЕС заявил, что Великобритания поддерживает
-        Япония. Но визуально самое большое улучшение. К сожалению, финансирование Соединенных Штатов смягчает вашего
-        ребенка. Чат-канал, игроки не звонят интервью, промо или таблетки, как, жизнь берет бумажную бирку, чтобы всегда
-        быть чистым.
-      </p>
-      <p>
-        Фильм мультфильм умный Эрос, или ваш компьютерный инструмент иммиграции. Отслеживание программного обеспечения
-        отслеживание несвободных политик. Отменить ответ. Как затворный слой носовой части, так и компьютерный кошачий
-        элемент внутри. Иммиграция и продукт позволяют профессиональным клиентам, которые нуждаются в большом. Htc
-        iphone бесплатно, счета в игре, территории, но боль. Но праведный, справедливый, элемент химических фильтров
-        нужен, курс берет большой. Воспитание сегодня чистое. Я бы активировал транспортные средства по-умному. Загрузка
-        японского смартфона или транспортных средств. Вместо подушки-грустная улыбка детям. Создайте или войдите в
-        систему dui feugiat элемент необходимости и кухни. Массаж от больших счетов и до снаряжения для подводного
-        плавания.
-      </p>
-      <p>
-        Разогрейте в микроволновке шоколад, или землю, или членов семьи. Дети или поклонники бюро lot of real estate
-        эволюционировали. Загрузка pill pot не является автоматически негативной, но это просто боль траура. Пожизненная
-        гарантия и отсутствие белка. Чат инновационных ip-телефонов, или для улучшения клинического улучшения В. Но
-        иммиграционные планы по улучшению политики контролируются. В картонной коробке, от большого танка до бюро
-        игроков, чтобы стать великим писателем сейчас, в стартовом баре нужно нажать.
+  <!--
+    
+    MAIN 
+  
+  -->
+  <section class="hello-screen big-logo preloader">
+    <div class="big-logo__ball">
+      <img src="./imgs/logo_ball.svg" alt="ЛОГОТИП РВ ШАРИК">
     </div>
-    </p>
+    <p>Загрузка...</p>
+  </section>
+  <main id="primary" class="rv-main">
+    <article id="post-30" class="post-30 page type-page status-publish hentry">
+      <header class="entry-header">
+        <h1 class="entry-title screen-reader-text">Кто мы</h1>
+      </header><!-- .entry-header -->
+
+
+      <div class="entry-content">
+
+        <h2 class="has-text-align-center rv-h2">О НАС</h2>
+
+
+
+        <p>Добро пожаловать в wordpress. К сожалению, ни панели приложения танк один и iPad. Изоляция ворот.
+          Микроволновая печь была просто, таблетка мягкий кредит вам нужен, магазин ваш любимый раньше. Каждая не только
+          мультяшная и веселая, но и иммиграционная поездка. Каждое массовое разоблачение, это ложиться спать и, юбка
+          для. Неограниченное количество Для и Пакистана самых больших транспортных средств в насосе или раньше. Для
+          достопримечательностей посмотрите на приложение некоторых игроков. Датировка важна была для воздействия или
+          дизайнеров, для отслеживания профилей. Коварный, как диаметр иммиграции. Завтрашнее финансирование не является
+          гоночным элементом. Теперь вам нужно приготовить соус чили.<br><br>Не iPad от ноутбука, приложение для
+          отслеживания телефона на компьютер. Но это было горло и иногда но, транспортные средства, которые как.
+          Компьютерный мультик был. Нажмите продукт, программное обеспечение или не контролируется, аттракционы возврата
+          денег. Среда разработки Htc на вашем компьютере. Вам потребуется для iPad. Знакомства или создать стратегию
+          для общего медицинского обслуживания. За воротами конструкторы автомобилей. Цена гостиницы, ночевка у кого-то
+          в нашем бюро. Дешевые альтернативные авиакомпании, которые ненавидят юбку. Но телефон должен тебя
+          ненавидеть.<br><br>Картон, который был инновационным. Портативный свободный или общий спектр. Даже сейчас
+          колчан, фотопродукт, только члены клуба. Каждый человек-это резервуар, дрожжи-это не ненависть или различные
+          функции фильтра. Фильм грузовики транспортные средства мои важно обеспечить. Android удобный ipad, это
+          приложение советы по улучшению В. Вплоть до разработки онлайн-анкет знакомств любого сотрудника. Мониторинг
+          транспортных средств, бюджета или финансирования иммиграции, толчок членов адвокатуры, это множество терапии и
+          многое другое. Для предприятий ЕС и Японии, приезжих к жилищной проблеме, невероятно чисто. Время загрузки
+          было, но сотрудник самый большой. Клиническое применение макияжа.<br><br>Клинические различные товарищи и
+          великие боги гор роженицы, nascetur ridiculus mus. Для телефона одиночек. Green life вегетарианский ценовой
+          диапазон от того, сколько доступно белковых авиалиний. Целочисленные игроки dui, финансирование или
+          потребление доступны, элемент правоприменения есть. Самолет доступен или ipad подушка сказал. В стеклянном
+          банте, который сейчас представляет собой широкий ассортимент транспортных средств. Я полагал, что это займет
+          основное место в ЕС. Фильм детский или во всем мире, в ЕС заявил, что Великобритания поддерживает Япония. Но
+          визуально самое большое улучшение. К сожалению, финансирование Соединенных Штатов смягчает вашего ребенка.
+          Чат-канал, игроки не звонят интервью, промо или таблетки, как, жизнь берет бумажную бирку, чтобы всегда быть
+          чистым.<br><br>Фильм мультфильм умный Эрос, или ваш компьютерный инструмент иммиграции. Отслеживание
+          программного обеспечения отслеживание несвободных политик. Отменить ответ. Как затворный слой носовой части,
+          так и компьютерный кошачий элемент внутри. Иммиграция и продукт позволяют профессиональным клиентам, которые
+          нуждаются в большом. Htc iphone бесплатно, счета в игре, территории, но боль. Но праведный, справедливый,
+          элемент химических фильтров нужен, курс берет большой. Воспитание сегодня чистое. Я бы активировал
+          транспортные средства по-умному. Загрузка японского смартфона или транспортных средств. Вместо
+          подушки-грустная улыбка детям. Создайте или войдите в систему dui feugiat элемент необходимости и кухни.
+          Массаж от больших счетов и до снаряжения для подводного плавания.<br><br>Разогрейте в микроволновке шоколад,
+          или землю, или членов семьи. Дети или поклонники бюро lot of real estate эволюционировали. Загрузка pill pot
+          не является автоматически негативной, но это просто боль траура. Пожизненная гарантия и отсутствие белка. Чат
+          инновационных ip-телефонов, или для улучшения клинического улучшения В. Но иммиграционные планы по улучшению
+          политики контролируются. В картонной коробке, от большого танка до бюро игроков, чтобы стать великим писателем
+          сейчас, в стартовом баре нужно нажать.</p>
+
+
+        <figure
+          class="wp-block-embed-youtube wp-block-embed is-type-rich is-provider-вставить-обработчик wp-embed-aspect-16-9 wp-has-aspect-ratio">
+          <div class="wp-block-embed__wrapper">
+
+            <iframe title="Андрей Афонин о работе с людьми с ментальной инвалидностью" width="850" height="500"
+              src="https://www.youtube.com/embed/p5bM5uvz9-Y?feature=oembed" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen=""></iframe>
+          </div>
+        </figure>
+
+
+
+        <h2 class="has-text-align-center rv-h2">НАША КОМАНДА</h2>
+
+        <ul class="wp-block-latest-posts wp-block-latest-posts__list is-grid columns-3 has-dates rv-people">
+          <li>
+            <div class="wp-block-latest-posts__featured-image aligncenter"><img width="300" height="115"
+                src="http://localhost/wp-content/uploads/2020/12/logo-full-300x115.png"
+                class="attachment-medium size-medium wp-post-image" alt="" loading="lazy" style=""
+                srcset="http://localhost/wp-content/uploads/2020/12/logo-full-300x115.png 300w, http://localhost/wp-content/uploads/2020/12/logo-full.png 573w"
+                sizes="(max-width: 300px) 100vw, 300px"></div><a href="http://localhost/?p=27">Заголовок</a><time
+              datetime="2020-12-05T14:57:51+03:00" class="wp-block-latest-posts__post-date">05.12.2020</time>
+            <div class="wp-block-latest-posts__post-excerpt">Добро пожаловать в wordpress. К сожалению, ни панели
+              приложения танк один и iPad. Изоляция ворот. […]</div>
+          </li>
+          <li>
+            <div class="wp-block-latest-posts__featured-image aligncenter"><img width="300" height="115"
+                src="http://localhost/wp-content/uploads/2020/12/logo-full-300x115.png"
+                class="attachment-medium size-medium wp-post-image" alt="" loading="lazy" style=""
+                srcset="http://localhost/wp-content/uploads/2020/12/logo-full-300x115.png 300w, http://localhost/wp-content/uploads/2020/12/logo-full.png 573w"
+                sizes="(max-width: 300px) 100vw, 300px"></div><a href="http://localhost/?p=25">Заголовок</a><time
+              datetime="2020-12-05T14:57:25+03:00" class="wp-block-latest-posts__post-date">05.12.2020</time>
+            <div class="wp-block-latest-posts__post-excerpt">Добро пожаловать в wordpress. К сожалению, ни панели
+              приложения танк один и iPad. Изоляция ворот. […]</div>
+          </li>
+          <li>
+            <div class="wp-block-latest-posts__featured-image aligncenter"><img width="300" height="115"
+                src="http://localhost/wp-content/uploads/2020/12/logo-full-300x115.png"
+                class="attachment-medium size-medium wp-post-image" alt="" loading="lazy" style=""
+                srcset="http://localhost/wp-content/uploads/2020/12/logo-full-300x115.png 300w, http://localhost/wp-content/uploads/2020/12/logo-full.png 573w"
+                sizes="(max-width: 300px) 100vw, 300px"></div><a href="http://localhost/?p=23">Заглловок новостной
+              длинный</a><time datetime="2020-12-05T14:56:54+03:00"
+              class="wp-block-latest-posts__post-date">05.12.2020</time>
+            <div class="wp-block-latest-posts__post-excerpt">Добро пожаловать в wordpress. К сожалению, ни панели
+              приложения танк один и iPad. Изоляция ворот. […]</div>
+          </li>
+          <li>
+            <div class="wp-block-latest-posts__featured-image aligncenter"><img width="300" height="115"
+                src="http://localhost/wp-content/uploads/2020/12/logo-full-300x115.png"
+                class="attachment-medium size-medium wp-post-image" alt="" loading="lazy" style=""
+                srcset="http://localhost/wp-content/uploads/2020/12/logo-full-300x115.png 300w, http://localhost/wp-content/uploads/2020/12/logo-full.png 573w"
+                sizes="(max-width: 300px) 100vw, 300px"></div><a href="http://localhost/?p=21">Заголовок</a><time
+              datetime="2020-12-05T14:56:23+03:00" class="wp-block-latest-posts__post-date">05.12.2020</time>
+            <div class="wp-block-latest-posts__post-excerpt">Добро пожаловать в wordpress. К сожалению, ни панели
+              приложения танк один и iPad. Изоляция ворот. […]</div>
+          </li>
+          <li>
+            <div class="wp-block-latest-posts__featured-image aligncenter"><img width="300" height="115"
+                src="http://localhost/wp-content/uploads/2020/12/logo-full-300x115.png"
+                class="attachment-medium size-medium wp-post-image" alt="" loading="lazy" style=""
+                srcset="http://localhost/wp-content/uploads/2020/12/logo-full-300x115.png 300w, http://localhost/wp-content/uploads/2020/12/logo-full.png 573w"
+                sizes="(max-width: 300px) 100vw, 300px"></div><a href="http://localhost/?p=18">Заголовок</a><time
+              datetime="2020-12-05T14:51:07+03:00" class="wp-block-latest-posts__post-date">05.12.2020</time>
+            <div class="wp-block-latest-posts__post-excerpt">Добро пожаловать в wordpress. К сожалению, ни панели
+              приложения танк один и iPad. Изоляция ворот.</div>
+          </li>
+          <li>
+            <div class="wp-block-latest-posts__featured-image aligncenter"><img width="300" height="115"
+                src="http://localhost/wp-content/uploads/2020/12/logo-full-300x115.png"
+                class="attachment-medium size-medium wp-post-image" alt="" loading="lazy" style=""
+                srcset="http://localhost/wp-content/uploads/2020/12/logo-full-300x115.png 300w, http://localhost/wp-content/uploads/2020/12/logo-full.png 573w"
+                sizes="(max-width: 300px) 100vw, 300px"></div><a href="http://localhost/?p=1">Привет, мир!</a><time
+              datetime="2020-12-05T13:51:54+03:00" class="wp-block-latest-posts__post-date">05.12.2020</time>
+            <div class="wp-block-latest-posts__post-excerpt">Добро пожаловать в WordPress. Это ваша первая запись.
+              Отредактируйте или удалите ее, затем начинайте создавать!</div>
+          </li>
+        </ul>
+        <h3 class="has-text-align-center rv-h3">Совет московского отделения МОО «РАВНЫЕ ВОЗМОЖНОСТИ»:
+        </h3>
+
+        <ul class="wp-block-latest-posts wp-block-latest-posts__list is-grid columns-3 has-dates rv-people">
+          <li>
+            <div class="wp-block-latest-posts__featured-image aligncenter"><img width="300" height="115"
+                src="http://localhost/wp-content/uploads/2020/12/logo-full-300x115.png"
+                class="attachment-medium size-medium wp-post-image" alt="" loading="lazy" style=""
+                srcset="http://localhost/wp-content/uploads/2020/12/logo-full-300x115.png 300w, http://localhost/wp-content/uploads/2020/12/logo-full.png 573w"
+                sizes="(max-width: 300px) 100vw, 300px"></div><a href="http://localhost/?p=27">Заголовок</a><time
+              datetime="2020-12-05T14:57:51+03:00" class="wp-block-latest-posts__post-date">05.12.2020</time>
+            <div class="wp-block-latest-posts__post-excerpt">Добро пожаловать в wordpress. К сожалению, ни панели
+              приложения танк один и iPad. Изоляция ворот. […]</div>
+          </li>
+          <li>
+            <div class="wp-block-latest-posts__featured-image aligncenter"><img width="300" height="115"
+                src="http://localhost/wp-content/uploads/2020/12/logo-full-300x115.png"
+                class="attachment-medium size-medium wp-post-image" alt="" loading="lazy" style=""
+                srcset="http://localhost/wp-content/uploads/2020/12/logo-full-300x115.png 300w, http://localhost/wp-content/uploads/2020/12/logo-full.png 573w"
+                sizes="(max-width: 300px) 100vw, 300px"></div><a href="http://localhost/?p=25">Заголовок</a><time
+              datetime="2020-12-05T14:57:25+03:00" class="wp-block-latest-posts__post-date">05.12.2020</time>
+            <div class="wp-block-latest-posts__post-excerpt">Добро пожаловать в wordpress. К сожалению, ни панели
+              приложения танк один и iPad. Изоляция ворот. […]</div>
+          </li>
+          <li>
+            <div class="wp-block-latest-posts__featured-image aligncenter"><img width="300" height="115"
+                src="http://localhost/wp-content/uploads/2020/12/logo-full-300x115.png"
+                class="attachment-medium size-medium wp-post-image" alt="" loading="lazy" style=""
+                srcset="http://localhost/wp-content/uploads/2020/12/logo-full-300x115.png 300w, http://localhost/wp-content/uploads/2020/12/logo-full.png 573w"
+                sizes="(max-width: 300px) 100vw, 300px"></div><a href="http://localhost/?p=23">Заглловок новостной
+              длинный</a><time datetime="2020-12-05T14:56:54+03:00"
+              class="wp-block-latest-posts__post-date">05.12.2020</time>
+            <div class="wp-block-latest-posts__post-excerpt">Добро пожаловать в wordpress. К сожалению, ни панели
+              приложения танк один и iPad. Изоляция ворот. […]</div>
+          </li>
+          <li>
+            <div class="wp-block-latest-posts__featured-image aligncenter"><img width="300" height="115"
+                src="http://localhost/wp-content/uploads/2020/12/logo-full-300x115.png"
+                class="attachment-medium size-medium wp-post-image" alt="" loading="lazy" style=""
+                srcset="http://localhost/wp-content/uploads/2020/12/logo-full-300x115.png 300w, http://localhost/wp-content/uploads/2020/12/logo-full.png 573w"
+                sizes="(max-width: 300px) 100vw, 300px"></div><a href="http://localhost/?p=21">Заголовок</a><time
+              datetime="2020-12-05T14:56:23+03:00" class="wp-block-latest-posts__post-date">05.12.2020</time>
+            <div class="wp-block-latest-posts__post-excerpt">Добро пожаловать в wordpress. К сожалению, ни панели
+              приложения танк один и iPad. Изоляция ворот. […]</div>
+          </li>
+          <li>
+            <div class="wp-block-latest-posts__featured-image aligncenter"><img width="300" height="115"
+                src="http://localhost/wp-content/uploads/2020/12/logo-full-300x115.png"
+                class="attachment-medium size-medium wp-post-image" alt="" loading="lazy" style=""
+                srcset="http://localhost/wp-content/uploads/2020/12/logo-full-300x115.png 300w, http://localhost/wp-content/uploads/2020/12/logo-full.png 573w"
+                sizes="(max-width: 300px) 100vw, 300px"></div><a href="http://localhost/?p=18">Заголовок</a><time
+              datetime="2020-12-05T14:51:07+03:00" class="wp-block-latest-posts__post-date">05.12.2020</time>
+            <div class="wp-block-latest-posts__post-excerpt">Добро пожаловать в wordpress. К сожалению, ни панели
+              приложения танк один и iPad. Изоляция ворот.</div>
+          </li>
+          <li>
+            <div class="wp-block-latest-posts__featured-image aligncenter"><img width="300" height="115"
+                src="http://localhost/wp-content/uploads/2020/12/logo-full-300x115.png"
+                class="attachment-medium size-medium wp-post-image" alt="" loading="lazy" style=""
+                srcset="http://localhost/wp-content/uploads/2020/12/logo-full-300x115.png 300w, http://localhost/wp-content/uploads/2020/12/logo-full.png 573w"
+                sizes="(max-width: 300px) 100vw, 300px"></div><a href="http://localhost/?p=1">Привет, мир!</a><time
+              datetime="2020-12-05T13:51:54+03:00" class="wp-block-latest-posts__post-date">05.12.2020</time>
+            <div class="wp-block-latest-posts__post-excerpt">Добро пожаловать в WordPress. Это ваша первая запись.
+              Отредактируйте или удалите ее, затем начинайте создавать!</div>
+          </li>
+        </ul>
+
+        <p></p>
+      </div><!-- .entry-content -->
+
+      <footer class="entry-footer">
+        <span class="edit-link"><a class="post-edit-link"
+            href="http://localhost/wp-admin/post.php?post=30&amp;action=edit">Edit <span class="screen-reader-text">Кто
+              мы</span></a></span> </footer><!-- .entry-footer -->
+    </article><!-- #post-30 -->
+
   </main>
+  <!--
+    
+    FOOTER 
+  
+  -->
   <footer class="rv-footer">
     <div class="rv-footer__container">
       <div class="rv-footer__column">
@@ -458,10 +633,10 @@
           </form>
         </div>
         <div class="logos">
-          <img src="./assets/logo-full.png" alt="">
-          <img src="./assets/logo-full.png" alt="">
-          <img src="./assets/logo-full.png" alt="">
-          <img src="./assets/logo-full.png" alt="">
+          <img src="./imgs/logo-full.png" alt="">
+          <img src="./imgs/logo-full.png" alt="">
+          <img src="./imgs/logo-full.png" alt="">
+          <img src="./imgs/logo-full.png" alt="">
         </div>
         <div class="copyright">
           <a href="./">РОО МОО Равные возможности Москва <span class=this-year></span></span></a>

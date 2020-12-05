@@ -20,7 +20,7 @@ $('.menu-btn-open').each(function () {
         window.setTimeout(function () {
             $("body").toggleClass("hidden-body")
             $(".mobile-menu").toggleClass("slide-from")
-        }, 1000)
+        }, 400)
     })
 });
 
@@ -33,7 +33,7 @@ $('.menu-btn-close').each(function () {
         window.setTimeout(function () {
             $(".mobile-menu").toggleClass("mobile-menu-hidden")
             $(".mobile-menu").toggleClass("slide-away")
-        }, 1000);
+        }, 500);
     })
 });
 

@@ -12,7 +12,7 @@ module.exports = merge(config, {
     mode: "production",
     
     output: {
-        filename: "[name].[contentHash].js",
+        filename: "rv-scripts.[hash].js",
         path: path.resolve(__dirname, "prod")
     },
     optimization: {
@@ -38,7 +38,7 @@ module.exports = merge(config, {
           })
       ]
     },
-    plugins: [new MiniCssExtractPlugin({filename: "[name].[contentHash].css"}), new CleanWebpackPlugin(), new webpack.ProvidePlugin({
+    plugins: [new MiniCssExtractPlugin({filename: "rv-style.[hash].css"}), new CleanWebpackPlugin(), new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery'
     }) ],
