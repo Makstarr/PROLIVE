@@ -385,13 +385,13 @@ svg {
     }
 }
 
-
+.wp-block-latest-posts{
+    padding: 0;
+}
 .rv-card, .wp-block-latest-posts.rv-small-cards li {
     border-radius: 15px;
     border: 2px solid var(--borderColor);
     box-shadow: var(--shadow);
-    display: grid;
-    place-items: center;
 }
 
 .big-rv-card {
@@ -422,7 +422,8 @@ svg {
 a.big-button {
     background-color: $myOrange;
     color: $myBtnOrangeText;
-
+    display: block;
+    
     &:hover {
         background-color: $myBtnGreen;
         color: $myBtnGreenText;
@@ -1133,6 +1134,13 @@ button.menu-btn {
         display: flex;
         align-items: center;
         justify-content: center;
+        a{
+            display: block;
+            width: 100%;
+            img{
+                width: 100%;
+            }
+        }
     }
     display: flex;
     flex-direction: column;
@@ -1140,7 +1148,7 @@ button.menu-btn {
 }
 
 .rv-small-cards article h2,
-.rv-small-cards li a {
+.rv-small-cards li > a {
     text-decoration: none;
     text-align: center;
     &:visited{
@@ -1154,7 +1162,7 @@ button.menu-btn {
 
 .rv-small-cards article,
 .rv-small-cards li div {
-    img{
+    a img{
         transition: all .5s;
        // filter: grayscale(100);
     }
@@ -1255,6 +1263,10 @@ flex-wrap: wrap;
     .color-social-icons{
         margin: .2em 0 .5em 0;
     }
+    &__info {
+display: flex;
+justify-content: center;
+    }
     &__nav,
     &__online,
     &__info {
@@ -1327,6 +1339,9 @@ animation-fill-mode: forwards;
     }
 }
 
+
+
+/* PEOPLE*/
 section.preloader{
     display: none;
 }
@@ -1372,4 +1387,54 @@ section.preloader{
         }
     }
 }
+
+/* HELP */
+
+.help-img, .help-img-dark {
+    border-radius: 10px;
+    overflow: hidden;
+}
+ .help-img-dark  img{
+    opacity: 12%
+}
+.help-img {
+    opacity: .9;
+    display: var(--helpImg)!important;
+}
+
+.help-img-dark {
+    display: var(--helpImg2)!important;
+}
+
+.help-button-container.help-form {
+    text-decoration: none!important;
+    display: block;
+    z-index: 2;
+    &:hover{
+        transform: scale(1.1)
+    }
+    width: 10em;
+    font-size: 2em;
+    margin: auto;
+    .help-button{
+        margin: 60px auto;
+        box-shadow: var(--shadow);
+        white-space: normal;
+        text-align: center;
+    height: 10em;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    
+}
+
+.gray{
+    filter: grayscale(1);
+    &:hover{
+        filter: grayscale(0);
+    }
+}
+
 @import "adaptive";

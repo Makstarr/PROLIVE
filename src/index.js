@@ -21,6 +21,7 @@ $('.menu-btn-open').each(function () {
             $("body").toggleClass("hidden-body")
             $(".mobile-menu").toggleClass("slide-from")
         }, 400)
+        e.isDefaultPrevented()
     })
 });
 
@@ -56,11 +57,12 @@ $('.popup-gallery').each(function () {
 
 
 
-$('.help-button-container').each(function () { 
+$('.help-button-container-top').each(function () { 
     $(this).on("click", function (e) {
         e.preventDefault();
+        console.log(e)
         window.setTimeout(function () {
-        window.location.href = './help.html';
+        window.location.href = 'http://localhost/help/';
         }, 500)
     })
 })

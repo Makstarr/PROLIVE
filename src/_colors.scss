@@ -18,6 +18,9 @@ $mySoftPink: #cc5a80;
 $mySoftPink2: #fa64a0;
 $mySoftRed:  #ff4271;
 :root {
+  --helpImgLight: block;
+  --helpImgDark: none;
+
     --infoTextColorDark: #464646;
     --infoTextColorLight: #373737;
 
@@ -69,6 +72,8 @@ $mySoftRed:  #ff4271;
     --footerborderColor: var(--footerborderColorLight);
     --shadow: var(--shadowLight);
     --infoTextColor: var(--infoTextColorLight);
+    --helpImg: var(--helpImgLight);
+    --helpImg2: var(--helpImgDark);
 }
 
 
@@ -90,7 +95,8 @@ $mySoftRed:  #ff4271;
           --footerborderColor: var(--footerColorDark);
           --shadow: var(--shadowDark);
           --infoTextColor: var(--infoTextColorDark);
-
+          --helpImg: var(--helpImgDark);
+          --helpImg2: var(--helpImgLight);
       }
   }
 }
@@ -108,6 +114,8 @@ $mySoftRed:  #ff4271;
   --borderColor: var(--borderColorDark);
   --footerborderColor: var(--footerColorDark);
   --shadow: var(--shadowDark);
-
+  --helpImg: var(--helpImgDark);
   --infoTextColor: var(--infoTextColorDark);
+  --helpImg: var(--helpImgDark);
+          --helpImg2: var(--helpImgLight);
 }

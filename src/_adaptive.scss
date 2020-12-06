@@ -39,9 +39,8 @@
 }
 
 @media (max-width:700px) {
-    body.rv-main {
+    main.rv-main {
         margin-top: 100px;
-        padding: 0;
     }
 
     .rv-footer {
@@ -241,11 +240,13 @@
 
 /*CARDS*/
 @media (max-width:900px) {
-    main.rv-main {
-        padding: 0 20px;
+   main.rv-main {
+        padding: 0;
         margin-top: 100px;
     }
-
+    main.rv-main {
+        padding: 5px;
+    }
     .rv-small-cards {
         margin: 0;
         flex-direction: column;
@@ -298,6 +299,9 @@
 }
 
 @media (max-width:600px) {
+    .rv-h2{
+        font-size: 1.8em;
+    }
     .rv-small-cards {
 
         article,
@@ -335,6 +339,9 @@
 }
 
 @media (max-width: 800px) {
+    a.big-button{
+        width: 80%
+    }
     .wp-block-embed-youtube {
         width: 100%;
         display: block !important;
@@ -364,7 +371,9 @@
 }
 
 @media (max-width: 420px) {
-
+    body{
+        padding: 1em 0;
+    }
     .rv-people {
         li {
             margin: 20px auto;
@@ -377,4 +386,13 @@
             }
         }
     }
+}
+
+
+/*FORMS*/
+@media (max-width: 600px) {
+
+.help-button-container.help-form {
+    font-size: 1em;
+}
 }
