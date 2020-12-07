@@ -21,6 +21,7 @@ get_header();
     // параметры по умолчанию
     $posts = get_posts( array(
         'numberposts' => 9,
+        'category'    => 2,
         'post_type'   => 'post',
         'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
     ) );
@@ -31,7 +32,7 @@ get_header();
     
 	<li class="small-card">
 
-<div class="wp-block-latest-posts__featured-image aligncenter gray">
+<div class="wp-block-latest-posts__featured-image aligncenter">
 <a href="<?php the_permalink(); ?>">
 <?php the_post_thumbnail("thumbnail"); ?>
 </a> 
@@ -39,7 +40,7 @@ get_header();
 
 <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 <div class="wp-block-latest-posts__post-excerpt"><?php the_excerpt("25"); ?></div>
-<time datetime="2020-12-05T14:57:25+03:00" class="wp-block-latest-posts__post-date"><?php the_time('F jS, Y'); ?></time>
+<time datetime="2020-12-05T14:57:25+03:00" class="wp-block-latest-posts__post-date"><?php the_time('d.m.y'); ?></time>
 </li>
 <?php 
 } ?>

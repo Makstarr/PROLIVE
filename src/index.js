@@ -1,8 +1,10 @@
 import "./main.scss"
-import "magnific-popup"
-import "./colorThemeChanger.js"
-
-
+import "magnific-popup";
+import "./colorThemeChanger.js";
+import $ from 'jquery';
+window.$ = window.jQuery = $;
+import "./js/slick.min.js"
+import "./js/slick-settings.js"
 /* COPY YEAR */
 $('.this-year').text(new Date().getFullYear())
 

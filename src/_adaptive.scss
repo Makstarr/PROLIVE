@@ -146,6 +146,12 @@
 }
 
 @media (max-width:500px) {
+    .light-gray-btn{
+        svg{
+            padding: 0;
+            margin: 0;
+        }
+    }
     .hello-screen {
 
 
@@ -240,13 +246,15 @@
 
 /*CARDS*/
 @media (max-width:900px) {
-   main.rv-main {
-        padding: 0;
+    main.rv-main {
+
         margin-top: 100px;
     }
+
     main.rv-main {
-        padding: 5px;
+        padding: 1.2em;
     }
+
     .rv-small-cards {
         margin: 0;
         flex-direction: column;
@@ -299,8 +307,14 @@
 }
 
 @media (max-width:600px) {
-    .rv-h2{
+    .rv-h2 {
         font-size: 1.8em;
+    }
+    main.rv-main p{
+        text-align: justify;
+    }
+    .wp-block-latest-posts__post-excerpt p{
+        text-align: justify;
     }
     .rv-small-cards {
 
@@ -339,9 +353,10 @@
 }
 
 @media (max-width: 800px) {
-    a.big-button{
+    a.big-button {
         width: 80%
     }
+
     .wp-block-embed-youtube {
         width: 100%;
         display: block !important;
@@ -371,9 +386,10 @@
 }
 
 @media (max-width: 420px) {
-    body{
+    body {
         padding: 1em 0;
     }
+
     .rv-people {
         li {
             margin: 20px auto;
@@ -392,7 +408,67 @@
 /*FORMS*/
 @media (max-width: 600px) {
 
-.help-button-container.help-form {
-    font-size: 1em;
+    .help-button-container.help-form {
+        font-size: 1em;
+    }
 }
+
+
+
+
+
+/*SLICK*/
+
+@media (max-width: 900px) {
+    .slider-container {
+        max-width: calc(90vw);
+    }
+
+    .slick-dots {
+        font-size: .8em;
+    }
+
+    @media (min-height: 900px) {
+        .slider-container {
+            .slider__item > .rv-h2 {
+                display: block;
+                font-size: 4em;
+                margin: 30px auto;
+            }
+        }
+    
+        .slick-arrow {
+            top: 1em;
+            font-size: .9em;
+        }
+    
+        .slick-dots {
+            display: none!important;
+        }
+        .slick-track{
+            margin-top: 50px;
+        }
+    }
+}
+
+@media (max-width: 500px){
+    .slider-container {
+        .slider__item > .rv-h2 {
+            display: block;
+            font-size: 4em;
+            margin: 30px auto;
+        }
+    }
+
+    .slick-arrow {
+        top: 1em;
+        font-size: .9em;
+    }
+
+    .slick-dots {
+        display: none!important;
+    }
+    .slick-track{
+        margin-top: 50px;
+    }
 }

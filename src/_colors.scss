@@ -4,6 +4,7 @@ $fbColor: #3B5998;
 $waColor: #25D366;
 $ytColor: #FC0D1B;
 
+
 $myPink: #cc3366;
 $myPink2: #ff0066;
 $myRed:  #cc0033;
@@ -18,6 +19,12 @@ $mySoftPink: #cc5a80;
 $mySoftPink2: #fa64a0;
 $mySoftRed:  #ff4271;
 :root {
+  --sliderColorDark: #33FF33;
+  --sliderColorLight: #333333;
+
+  --reviewColorDark:#34195554;
+  --reviewColorLight:#FCFCFC;
+
   --helpImgLight: block;
   --helpImgDark: none;
 
@@ -74,6 +81,8 @@ $mySoftRed:  #ff4271;
     --infoTextColor: var(--infoTextColorLight);
     --helpImg: var(--helpImgLight);
     --helpImg2: var(--helpImgDark);
+    --reviewColor:var(--reviewColorLight);
+    --sliderColor:var(--sliderColorLight);
 }
 
 
@@ -97,6 +106,8 @@ $mySoftRed:  #ff4271;
           --infoTextColor: var(--infoTextColorDark);
           --helpImg: var(--helpImgDark);
           --helpImg2: var(--helpImgLight);
+          --reviewColor:var(--reviewColorDark);
+          --sliderColor:var(--sliderColorDark);
       }
   }
 }
@@ -118,4 +129,6 @@ $mySoftRed:  #ff4271;
   --infoTextColor: var(--infoTextColorDark);
   --helpImg: var(--helpImgDark);
           --helpImg2: var(--helpImgLight);
+          --reviewColor:var(--reviewColorDark);
+          --sliderColor:var(--sliderColorDark);
 }
