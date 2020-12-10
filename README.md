@@ -1,5 +1,8 @@
 # РО МОО РАВНЫЕ ВОЗОЖНОСТИ
 
+## Сайт находится на финальной стадии разработки 
+### http://u9206163.beget.tech
+
 ## Дизайн
 
 ### Темная тема: https://www.figma.com/file/9NpHV6M9LiBYJJGJxqtRwC/%D0%A0%D0%92-%D0%9D%D0%9E%D0%A7%D0%AC?node-id=1%3A17 
