@@ -1,12 +1,7 @@
 <?php
-
-/**
- * The template for displaying all single posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
- * @package RVMOS
- */
+/*
+	Template Name: Партнеры
+*/
 
 get_header();
 ?>
@@ -39,7 +34,39 @@ get_header();
 
 	endwhile; // End of the loop.
 	?>
+<ul class="wp-block-latest-posts wp-block-latest-posts__list has-dates rv-small-cards parthners">
+    <?php
+    // Define custom query parameters
+    $custom_query_args = array(
+      'category__in' => 19
+    );
 
+    // Get current page and append to custom query parameters array
+    $custom_query_args['paged'] = get_query_var('paged') ? get_query_var('paged') : 1;
+
+    // Instantiate custom query
+    $custom_query = new WP_Query($custom_query_args);
+
+    // Pagination fix
+    $temp_query = $wp_query;
+    $wp_query   = NULL;
+    $wp_query   = $custom_query;
+
+    // Output custom query loop
+    if ($custom_query->have_posts()) :
+      while ($custom_query->have_posts()) :
+        $custom_query->the_post();
+    ?>
+        <li class="small-card parthners__card">
+
+          <div class="parthners__logo aligncenter">
+              <?php the_post_thumbnail("thumbnail"); ?>
+          </div>
+          <!--<div class="wp-block-latest-posts__post-excerpt"><?php //the_excerpt(25); ?></div>-->
+        </li>
+    <?php endwhile;
+    endif; ?>
+  </ul>
 </main><!-- #main -->
 
 <?php

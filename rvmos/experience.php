@@ -27,7 +27,7 @@ get_header();
         <?php
         // параметры по умолчанию
         $posts = get_posts(array(
-            'numberposts' => 100,
+            'numberposts' => 10,
             'order' => 'ASC',
             'orderby'     => 'title',
             'category'    => 7,

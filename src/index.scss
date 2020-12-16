@@ -1,10 +1,10 @@
-$myFont:'Montserrat',
+$myFont:'Roboto',
 sans-serif;
 $myLineHeight: 1.5;
 $myFontSize: 14px;
-@import "~magnific-popup/src/css/main.scss";
+//@import "~magnific-popup/src/css/main.scss";
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 @import "colors";
 @import "./css/slick.css";
 @import "./css/reset.css";
@@ -16,6 +16,7 @@ $myFontSize: 14px;
 body.hidden-body {
     padding: 0;
 }
+
 .hidden-body .slider-container {
     height: 0px !important;
 }
@@ -23,10 +24,6 @@ body.hidden-body {
 .loaded .slider-container {
     height: auto;
 }
-
-//@import "../rvmos/style.css";
-//@import "../rvmos/style.min.css";
-//@import "../rvmos/style-rtl.css";
 
 /* Slider */
 .slick-slider {
@@ -237,6 +234,7 @@ body.hidden-body {
 }
 
 .slick-arrow {
+
     cursor: pointer;
     z-index: +1;
     border: none;
@@ -302,12 +300,18 @@ a:visited {
     color: var(--textColor);
 }
 
-body,
-.rv-main {
+body {
     font-family: $myFont;
     padding: 2rem 1rem;
     line-height: $myLineHeight;
     font-size: $myFontSize;
+}
+
+.rv-main {
+    font-family: $myFont;
+    padding: 2rem 1rem;
+    line-height: $myLineHeight;
+    font-size: 15px;
 
 }
 
@@ -331,6 +335,9 @@ body,
         position: fixed;
         max-width: 100%;
         margin-top: 0;
+        p{
+            padding: 10px 0;
+        }
 
         .big-logo__ball {
             display: flex;
@@ -454,15 +461,15 @@ body {
     }
 
     input[type="text"],
-    input[type="mail"] {
+    input[type="email"] {
         opacity: 0.6;
     }
 }
 
-input.light-gray-btn,
+input[type="submit"] input.light-gray-btn,
 .subscribe-form .light-gray-btn,
 .search-form .light-gray-btn {
-    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.123) !important;
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0) !important;
 
     &:hover {
         transform: none !important;
@@ -637,6 +644,10 @@ input.light-gray-btn,
         height: 4rem;
         text-decoration: none;
         color: #fff;
+
+        &:hover {
+            transform: scale(1.05);
+        }
     }
 
     .vk {
@@ -676,7 +687,18 @@ input.light-gray-btn,
     border: 2px solid var(--borderColor);
     box-shadow: var(--shadow);
 }
-
+.attachment-medium.size-medium.wp-post-image{
+    object-fit: cover;
+ width: 100%;
+       height: 100%;
+}
+@import "bigbutton";
+.hello-screen {
+    margin-top: 120px;
+    margin-bottom: -80px;
+    width: 100%;
+    max-width: 1100px;
+  }
 .big-rv-card {
     margin: 2rem;
     padding: 1em 3em;
@@ -701,38 +723,6 @@ input.light-gray-btn,
     color: inherit;
 }
 
-.big-button-section .big-button{
-    width: 100%;
-    font-size: 3em;
-    margin: 60px 0;
-}
-a.big-button {
-    background-color: $myOrange;
-    color: $myBtnOrangeText;
-    display: block;
-
-    &:hover {
-        background-color: $myBtnGreen;
-        color: $myBtnGreenText;
-    }
-
-    transition: all .4s;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 2em;
-    padding: .5em;
-    width: 50%;
-    text-align: center;
-
-    border-radius: 10px;
-}
-
-.hello-screen {
-    margin-top: 120px;
-    margin-bottom: -80px;
-    width: 100%;
-    max-width: 1100px;
-}
 
 .big-logo {
     max-width: 60%;
@@ -1087,6 +1077,46 @@ a.big-button {
     position: absolute;
     animation: heartColorsAnimation 8s linear infinite;
 }
+.rv-header .current-menu-item{
+    position: relative;
+}
+.rv-header .current-menu-item::after{
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    opacity: .5;
+    content: "";
+    width: 90%;
+    position: absolute;
+    height: 1px;
+    border-radius: 5px;
+    background-color: var(--textColor);
+}
+.rv-header .current-menu-item:hover::after{
+    opacity: 1;
+}
+
+.nav-links span, .nav-links a{
+
+    color:var(--grayBtnTextColor);
+    background-color: var(--grayBtnColor);
+    font-size: 1.2em;
+    padding: 1em;
+    margin: 5px;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+.pagination{
+    margin-top: 60px;
+    margin-bottom: 30px;
+    .nav-links{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+}
 
 button.menu-btn {
     display: flex;
@@ -1139,7 +1169,9 @@ button.menu-btn {
         padding: 0.55em 1em;
         color: var(--grayBtnTextColor);
 
-        &:focus {
+        &:focus,
+        &:active {
+            color: var(--grayBtnTextColor);
             outline: none;
             border: none;
         }
@@ -1320,6 +1352,19 @@ button.menu-btn {
         margin: 0;
         width: 100%;
 
+        .wpcf7-form.init {
+            position: relative;
+
+            input[type="submit"] {
+                position: absolute;
+                top: 0;
+                width: 40%;
+                right: 0;
+                margin: 0;
+                font-size: .7em;
+            }
+        }
+
         form {
             position: relative;
             width: 100%;
@@ -1347,7 +1392,7 @@ button.menu-btn {
         }
 
         input[type="text"],
-        input[type="mail"] {
+        input[type="email"] {
             width: 95%;
 
         }
@@ -1414,6 +1459,7 @@ button.menu-btn {
 .rv-small-cards li {
     &:hover {
         img {
+            transition: all .4s;
             transform: scale(1.1);
             filter: grayscale(0);
         }
@@ -1424,18 +1470,25 @@ button.menu-btn {
     margin: 2rem 0;
 
     .wp-block-latest-posts__featured-image {
-        border-radius: 10px;
+
         display: flex;
         align-items: center;
         justify-content: center;
-
+        transition: all ;
+        border-radius: 15px;
+        overflow: hidden;
+        position: relative;
+        z-index: 4;
         a {
             display: block;
             width: 100%;
 
-            img {
-                width: 100%;
-            }
+          
+        }
+        img {
+            position: relative;
+            z-index: 3;
+            width: 100%!important;
         }
     }
 
@@ -1455,14 +1508,15 @@ button.menu-btn {
 
     color: var(--textColor);
     order: 1;
-    font-size: 1.8em;
-    font-weight: 500
+    font-size: 1.1em;
+    padding: .5em;
+    font-weight: 400
 }
 
 .rv-small-cards article,
 .rv-small-cards li div {
     a img {
-        transition: all .5s;
+        transition: all 1s;
         // filter: grayscale(100);
     }
 
@@ -1535,6 +1589,7 @@ button.menu-btn {
             right: 1rem;
             top: 1rem;
             width: 3rem;
+            z-index: 999;
 
         }
     }
@@ -1559,7 +1614,8 @@ button.menu-btn {
 
     .rv-h2 {
         text-align: center;
-        widows: 100%;
+        padding: .5em;
+    font-size: 3em;
     }
 
     .rv-footer__column {
@@ -1607,7 +1663,7 @@ button.menu-btn {
     }
 
 
-    &__nav {
+    &__nav, &__online {
 
         ul {
             a {
@@ -1698,7 +1754,7 @@ section.preloader {
             display: none;
         }
 
-        a {
+        a, h2 {
             text-align: center;
             width: 100%;
             display: inline-block;
@@ -1779,16 +1835,22 @@ section.preloader {
 
 .rv-small-cards.reviews {
     margin: 20px auto;
+    .wp-block-latest-posts__post-excerpt{
+
+        margin: .5em auto;
+       // text-align: center;
+    }
 }
 
 .rv-small-cards.reviews li h2 {
     text-align: center;
     font-size: 1.2em;
     font-weight: 600;
-    margin: 30px 0;
+    margin: 1em 0;
 }
+
 h2.reviews.rv-h2 {
-    margin: 30px 0;
+    margin: 1em 0;
 }
 
 .rv-small-cards.reviews li {
@@ -1807,4 +1869,144 @@ h2.reviews.rv-h2 {
     }
 }
 
+.blocks-gallery-grid .blocks-gallery-image img,
+.blocks-gallery-grid .blocks-gallery-item img,
+.wp-block-gallery .blocks-gallery-image img,
+.wp-block-gallery .blocks-gallery-item img {
+    border-radius: 15px !important;
+    border: 1px solid var(--footerborderColor);
+    box-shadow: var(--shadow);
+}
+.wp-block-image{
+    max-width:1200px; margin:auto;}
+
+
+.rv-contact-page{
+    max-width: 1000px;
+}
+
+.mobile-menu__info.rv-footer.rv-contact-page {
+    width: 100%;
+    border: none;
+
+}
+
+.mobile-menu__info.rv-footer.rv-contact-page .rv-footer__column {
+    width: 80%;
+    margin: auto;
+}
+
+.mobile-menu__info.rv-footer.rv-contact-page .rv-footer__container {
+    flex-wrap: wrap;
+}
+
+.mobile-menu__info.rv-footer.rv-contact-page .color-social-icons {
+    margin: 30px 25px !important;
+}
+
+.rv-ya-map {
+    overflow: hidden;
+    margin: 30px 20px !important;
+    display: block;
+    border: 1px solid var(--borderColor);
+    box-shadow: var(--shadow);
+
+}
+.rv-small-cards.reviews{
+	margin: 20px auto;
+}
+.rv-small-cards.reviews li h2{
+	text-align: center;
+	font-size: 1.2em;
+	font-weight: 600;
+}
+.rv-small-cards.reviews li {
+	background-color: var(--reviewColor);
+}
+.rv-main:nth-of-type(2){
+	margin-top: 10px;
+}
+input[type="submit"]{
+		box-shadow: inset 0px 0px 0px rgba(68,68,68,0)!important;
+}
+/* &#34;Блок-обертка&#34;, где мы задаем фоновое изображение скриншотом как на карте */
+.ymap-container {
+
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    background: url('./imgs/map.png') #8f8f8f no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+/* Блок, в котором появится Яндекс.Карта */
+#map-yandex {
+    position: relative;
+    z-index: 7;
+    width: 100%;
+    height: 400px;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.ya-btn span {
+    margin: 30px 0;
+}
+
+.rv-faq {
+    margin: 30px auto;
+    max-width: 1200px;
+    details {
+        font-size: 1.1em;
+        margin: 10px auto;
+        padding: 10px 30px;
+    }
+
+    summary {
+        opacity: .8;
+        margin: 10px auto;
+        margin-left: -30px;
+        transition: all .3s;
+        font-size: 1.2em;
+        font-weight: 500;
+        cursor: pointer;
+
+        &:hover,
+        &:focus {
+            color: $myBlue;
+        }
+    }
+}
+
+.rv-main {
+    display: block;
+    width: 100%;
+}
+
+.rvf.form {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    //background-color: #fff;
+}
+.rv-small-cards.parthners .parthners__card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    width: 20%;
+    margin: 0;
+    padding: .5em;
+}
+.parthners__logo{
+   width: 20%;
+
+}
+.parthners__logo img{
+display: inline;
+width: 100%;
+height: auto;
+}
+@import "forms";
 @import "adaptive";

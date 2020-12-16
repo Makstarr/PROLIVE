@@ -25,6 +25,14 @@ module.exports = merge(config, {
         template: "./src/about.html",
       }),
       new HtmlWebpackPlugin({
+        filename: 'first.html',
+        template: "./src/firstMeet.html",
+      }),
+      new HtmlWebpackPlugin({
+        filename: 'whatwedo.html',
+        template: "./src/whatwedo.html",
+      }),
+      new HtmlWebpackPlugin({
       filename: 'help.html',
       template: "./src/help.html",
     }), 

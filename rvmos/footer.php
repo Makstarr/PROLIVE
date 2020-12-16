@@ -25,8 +25,7 @@
                 <div class=description-with-header><span>Подпишитесь</span> <span>Чтобы узнать о новых
                         мероприятиях</span></div>
                 <div class=subscribe-form>
-                    <form action=#><input type=mail name="" id="" placeholder=email> <button
-                            class="light-gray-btn softer-btn"><span>Подписаться</span></button></form>
+                <?php echo do_shortcode('[contact-form-7 id="272" title="Подписка"]'); ?>
                 </div>
                 <div class=logos><img src=<?php echo get_template_directory_uri(); ?>/imgs/logo-full.png alt=""> <img src=<?php echo get_template_directory_uri(); ?>/imgs/logo-full.png alt=""> <img
                         src=<?php echo get_template_directory_uri(); ?>/imgs/logo-full.png alt=""> <img src=<?php echo get_template_directory_uri(); ?>/imgs/logo-full.png alt=""></div>

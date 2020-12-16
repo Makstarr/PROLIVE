@@ -73,6 +73,13 @@
 }
 
 @media (max-width:1040px) {
+    
+        .subscribe-form{
+            intput[type="submit"]{
+                font-size: .6em;
+            }
+        }
+    
     .hidden-1040px {
         display: none !important;
     }
@@ -82,7 +89,8 @@
     }
 
     .user-toggle,
-    .bvi {
+    .bvi,
+    .light-gray-btn.location {
         svg {
             margin: 0;
         }
@@ -146,12 +154,7 @@
 }
 
 @media (max-width:500px) {
-    .light-gray-btn{
-        svg{
-            padding: 0;
-            margin: 0;
-        }
-    }
+
     .hello-screen {
 
 
@@ -204,13 +207,20 @@
 
 /*MOBILE MENU*/
 @media (max-width:900px) {
+
+.mobile-menu__info.rv-footer.rv-contact-page .color-social-icons {
+    margin: 30px 0 !important;
+}
+
     .mobile-menu {
         .rv-footer__column {
             height: auto;
             overflow: hidden;
             position: inherit;
         }
-
+        .mobile-menu a{
+font-size: 1.5em;
+        }
         &__nav,
         &__online,
         &__info {
@@ -279,7 +289,6 @@
             a {
                 display: block;
                 width: 100%;
-                font-size: 1.5em;
             }
 
             .wp-block-latest-posts__featured-image {
@@ -305,27 +314,22 @@
         }
     }
 }
-
+@media (max-width:800px) {
+    main.rv-main {
+       padding: .8em;
+    }
+}
 @media (max-width:600px) {
     .rv-h2 {
         font-size: 1.8em;
     }
-    main.rv-main p{
-        text-align: justify;
-    }
-    .wp-block-latest-posts__post-excerpt p{
-        text-align: justify;
-    }
+  
     .rv-small-cards {
 
         article,
         li {
             padding: .5em;
 
-            h2,
-            a {
-                font-size: 1.3em;
-            }
 
             time {
                 font-size: .8em;
@@ -368,7 +372,7 @@
     }
 
     .rv-main .rv-h3 {
-        font-size: 1.5em;
+        font-size: 1em;
     }
 
     .rv-people {
@@ -405,11 +409,21 @@
 }
 
 
-/*FORMS*/
+/*FORM AND CONTACTS*/
 @media (max-width: 600px) {
-
+    .mobile-menu__info.rv-footer.rv-contact-page .rv-footer__column {
+        width:100%;
+        margin: auto;
+        }
+    .ya-btn:nth-child(2){
+        margin: 30px 0;
+    }
     .help-button-container.help-form {
         font-size: 1em;
+    }
+    .rv-footer__column {
+        min-width: 250px!important;
+        width:100%!important;
     }
 }
 

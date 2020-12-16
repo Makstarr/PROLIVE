@@ -1,6 +1,6 @@
 import "./main.scss"
 import "magnific-popup";
-import "./colorThemeChanger.js";
+import "./js/colorThemeChanger.js";
 import $ from 'jquery';
 window.$ = window.jQuery = $;
 import "./js/slick.min.js"
